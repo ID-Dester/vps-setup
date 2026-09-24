@@ -54,7 +54,7 @@ for line in result.stdout.splitlines():
         fields[label] = value.strip()
 
 private_key = fields.get("privatekey")
-public_key = fields.get("password") or fields.get("publickey")
+public_key = fields.get("password(publickey)") or fields.get("password") or fields.get("publickey")
 
 key_pattern = r"[A-Za-z0-9_-]{43}"
 if not private_key or not re.fullmatch(key_pattern, private_key):
